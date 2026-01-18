@@ -1,7 +1,6 @@
 import { lazy } from 'solid-js';
 import Home from './pages/Home';
-import Cart from './pages/Cart';
-import Product from './pages/Product';
+
 export const routes = [
   {
     path: '/',
@@ -9,11 +8,11 @@ export const routes = [
   },
   {
     path: '/cart',
-    component: Cart,
+    component: lazy(() => import('./pages/Cart')),
   },
   {
     path: '/product/:id',
-    component: Product,
+    component: lazy(() => import('./pages/Product')),
   },
   {
     path: '**',
